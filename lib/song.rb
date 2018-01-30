@@ -31,6 +31,6 @@ class Song
   end
 
   def find_by_name(name)
-    
+    self.class.all.bsearch { |song| song.name == name }
   end
 end
