@@ -15,13 +15,13 @@ class Song
   end
 
   def self.create
-    song = self.class.new
+    song = self.new
     song.save
     song
   end
 
   def self.new_by_name(name)
-    self.class.new(name)
+    self.new(name)
   end
 
   def self.create_by_name(name)
@@ -31,11 +31,18 @@ class Song
   end
 
   def self.find_by_name(name)
-    self.class.all.bsearch { |song| song.name == name }
+    self.all.bsearch { |song| song.name == name }
   end
 
   def self.find_or_create_by_name(name)
     song = self.find_by_name(name)
     song ? song : self.create_by_name(name)
+  end
+
+  def self.alphabetical
+    self.all.sort do |x, y|
+      if x.name <= y.name
+      end
+    end
   end
 end
