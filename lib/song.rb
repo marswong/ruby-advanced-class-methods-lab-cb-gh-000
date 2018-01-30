@@ -10,4 +10,5 @@ class Song
     self.class.all << self
   end
 
+  private
 end
