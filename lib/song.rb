@@ -30,11 +30,12 @@ class Song
     song
   end
 
-  def find_by_name(name)
+  def self.find_by_name(name)
     self.class.all.bsearch { |song| song.name == name }
   end
 
-  def find_or_create_by_name(name)
-    
+  def self.find_or_create_by_name(name)
+    song = self.find_by_name(name)
+    song ? song : self.create_by_name(name)
   end
 end
