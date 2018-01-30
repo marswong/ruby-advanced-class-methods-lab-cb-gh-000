@@ -42,6 +42,9 @@ class Song
   def self.alphabetical
     self.all.sort do |x, y|
       if x.name <= y.name
+        -1
+      else
+        1
       end
     end
   end
