@@ -53,5 +53,8 @@ class Song
     arr = filename.split(" - ")
     name = arr[0]
     artist_name = arr[1].gsub(/\..*/, "")
+    song = self.new_by_name(name)
+    song.artist_name = artist_name
+    song
   end
 end
