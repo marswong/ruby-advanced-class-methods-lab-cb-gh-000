@@ -50,6 +50,8 @@ class Song
   end
 
   def self.new_from_filename(filename)
-
+    arr = filename.split(" - ")
+    name = arr[0]
+    artist_name = arr[1].gsub(/\..*/, "")
   end
 end
