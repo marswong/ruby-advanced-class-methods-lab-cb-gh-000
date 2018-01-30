@@ -48,4 +48,8 @@ class Song
       end
     end
   end
+
+  def new_from_filename(filename)
+    
+  end
 end
